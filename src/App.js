@@ -14,9 +14,17 @@ function getRandomAnimal(){
 //console.log(getRandomAnimal());
 function App() {
   const [animals, setAnimals] = useState([]);
+  
+  const [numbers, setNumbers] =useState(0)
+  // const [removeanimal, setRemoveanimal] = useState([]);
 
+  // const removeClickAnimal=()=>{
+  //   setRemoveanimal(removeanimal-1);
+  // }
   const handleClickAnimal=()=>{
     setAnimals([...animals, getRandomAnimal()]);
+    setNumbers(numbers +1);
+
   }
 
   const renderedAnimals = animals.map((animal, index)=>{
@@ -29,18 +37,20 @@ function App() {
   };
   const handleClick1 = () => {
     setCount(count - 1);
+    setNumbers(numbers -1);
   };
   return (
     <div className="App">
       Hello
       <div>
         
-        <button onClick={handleClick}>Add Animal</button>
+        <button onClick={handleClick}>Add +</button>
         {" "}
-        <button onClick={handleClick1}>Remove Animal</button>
-        <div>Number of Animals: {count}</div>
+        <button onClick={handleClick1}>Remove -</button>
+        <div>Number of Animals: {count} {numbers}</div>
         {" "}
-        <button onClick={handleClickAnimal}>Random Animal</button>
+        <button onClick={handleClickAnimal}> Add Random Animal</button>
+        <button> Remove Random Animal</button>
         <div>
         {animals}</div>
         <div className="animal-list">{renderedAnimals}</div>

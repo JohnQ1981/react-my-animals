@@ -35,7 +35,6 @@ function AnimalShow({ type }) {
       alt="heart" 
       src={heart}
       style={{width: 10+ 10 * clicks+'px'}} 
-      
       />
 
     </div>

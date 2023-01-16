@@ -16,7 +16,7 @@ function App() {
   const [animals, setAnimals] = useState([]);
   
   const [numbers, setNumbers] =useState(0)
-  // const [removeanimal, setRemoveanimal] = useState([]);
+  // const [removeAnimal, setRemoveanimal] = useState([]);
 
   // const removeClickAnimal=()=>{
   //   setRemoveanimal(removeanimal-1);
@@ -24,8 +24,9 @@ function App() {
   const handleClickAnimal=()=>{
     setAnimals([...animals, getRandomAnimal()]);
     setNumbers(numbers +1);
-
   }
+ 
+ 
 
   const renderedAnimals = animals.map((animal, index)=>{
     return <AnimalShow type={animal} key={index} />
